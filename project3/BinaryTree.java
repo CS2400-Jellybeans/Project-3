@@ -61,6 +61,11 @@ public class BinaryTree<T> implements BinaryTreeInterface<T>
       root.postorderTraverse_binaryNodeMethod();
    }
 
+   public int getHeight_callBinaryNodeMethod()
+   {
+      return root.getHeight_binaryNodeMethod();
+   }
+
 /* Implementations of setRootData, getRootData, getHeight, getNumberOfNodes,
    isEmpty, clear, and the methods specified in TreeIteratorInterface are here.
    . . . */
