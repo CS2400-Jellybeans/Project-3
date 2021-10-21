@@ -59,8 +59,24 @@ class BinaryNode<T>
       return leftChild != null;
    } // end hasLeftChild
 
-/*   Implementations of getRightChild, setRightChild, and hasRightChild
-     are here and are analogous to their left-child counterparts. */
+   public BinaryNode<T> getRightChild()
+   {
+      return rightChild;
+   } // end getLeftChild
+
+   /** Sets this node’s left child to a given node.
+       @param newReftChild  A node that will be the left child. */
+   public void setRightChild(BinaryNode<T> newRightChild)
+   {
+      rightChild = newRightChild;
+   } // end setLeftChild
+
+   /** Detects whether this node has a left child.
+       @return  True if the node has a left child. */
+   public boolean hasRightChild()
+   {
+      return rightChild != null;
+   } // end hasLeftChild
    
    /** Detects whether this node is a leaf.
     @return  True if the node is a leaf. */
@@ -73,20 +89,47 @@ class BinaryNode<T>
        @return  The number of nodes in the subtree rooted at this node. */
    public int getNumberOfNodes()
    {
-      // < See Segment 25.10. >
+      int leftNumber = 0;
+      int rightNumber = 0;
+      if(leftChild != null)
+      {
+         leftNumber = leftChild.getNumberOfNodes();
+      }
+      if (rightChild != null)
+      {
+         rightNumber = rightChild.getNumberOfNodes();
+      }
+      return 1 + leftNumber + rightNumber;
    } // end getNumberOfNodes
    
    /** Computes the height of the subtree rooted at this node.
        @return  The height of the subtree rooted at this node. */
    public int getHeight()
    {
-      // < See Segment 25.10. >
+      return getHeight(this); // Call private getHeight
+   } // end getHeight
+   
+   private int getHeight(BinaryNode<T> node)
+   {
+      int height = 0;
+   
+      if (node != null)
+         height = 1 + Math.max(getHeight(node.getLeftChild()),
+                              getHeight(node.getRightChild()));
+      return height;
    } // end getHeight
 
    /** Copies the subtree rooted at this node.
        @return  The root of a copy of the subtree rooted at this node. */
    public BinaryNode<T> copy()
    {
-      // < See Segment 25.5. >
+      BinaryNode<T> newRoot = new BinaryNode<>(data);
+      if (leftChild != null)
+         newRoot.setLeftChild(leftChild.copy());
+   
+      if (rightChild != null)
+         newRoot.setRightChild(rightChild.copy());
+   
+      return newRoot;
    } // end copy
 } // end BinaryNode

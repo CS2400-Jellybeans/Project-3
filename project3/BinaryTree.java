@@ -46,5 +46,5 @@ public class BinaryTree<T> implements BinaryTreeInterface<T>
 /* Implementations of setRootData, getRootData, getHeight, getNumberOfNodes,
    isEmpty, clear, and the methods specified in TreeIteratorInterface are here.
    . . . */
-
+   
 } // end BinaryTree
