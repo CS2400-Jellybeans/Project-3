@@ -1,9 +1,5 @@
 package project3;
 
-import java.util.Iterator;
-import java.util.NoSuchElementException;
-import StackAndQueuePackage.*; // Needed by tree iterators
-
 public class BinaryTree<T> implements BinaryTreeInterface<T>
 {
    private BinaryNode<T> root;
@@ -56,6 +52,12 @@ public class BinaryTree<T> implements BinaryTreeInterface<T>
          System.out.println(node.getData());
       }
    }
+
+   public void setRootData(T rootData)
+   {
+      root.setData(rootData);
+   }
+
    public void postorderTraverse_callBinaryNodeMethod()
    {
       root.postorderTraverse_binaryNodeMethod();
