@@ -23,7 +23,7 @@ public class BinaryTree<T> implements BinaryTreeInterface<T>
       initializeTree(rootData, leftTree, rightTree);
    } // end constructor
 
-    public void setTree(T rootData, BinaryTreeInterface<T> leftTree,
+   public void setTree(T rootData, BinaryTreeInterface<T> leftTree,
                                    BinaryTreeInterface<T> rightTree)
    {
       initializeTree(rootData, (BinaryTree<T>)leftTree,
@@ -43,8 +43,26 @@ public class BinaryTree<T> implements BinaryTreeInterface<T>
          root.setRightChild(rightTree.root);
 	} // end initializeTree
 
+   public void postorderTraverse()
+   {
+      postorderTraverse(root);
+   }
+   private void postorderTraverse(BinaryNode<T> node)
+   {
+      if(node !=null)
+      {
+         postorderTraverse(node.getLeftChild());
+         postorderTraverse(node.getRightChild());
+         System.out.println(node.getData());
+      }
+   }
+   public void postorderTraverse_callBinaryNodeMethod()
+   {
+      root.postorderTraverse_binaryNodeMethod();
+   }
+
 /* Implementations of setRootData, getRootData, getHeight, getNumberOfNodes,
    isEmpty, clear, and the methods specified in TreeIteratorInterface are here.
    . . . */
-   
+
 } // end BinaryTree

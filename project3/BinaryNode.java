@@ -24,6 +24,22 @@ class BinaryNode<T>
       rightChild = newRightChild;
    } // end constructor
 
+   public void postorderTraverse_binaryNodeMethod()
+   {
+      postorderTraverse_binaryNodeMethod(this);
+   }
+   
+   private void postorderTraverse_binaryNodeMethod(BinaryNode<T> node)
+   {
+      if(node !=null)
+      {
+         postorderTraverse_binaryNodeMethod(node.getLeftChild());
+         postorderTraverse_binaryNodeMethod(node.getRightChild());
+         System.out.println(node.getData());
+      }
+   }
+   
+
    /** Retrieves the data portion of this node.
        @return  The object in the data portion of the node. */
    public T getData()
