@@ -82,8 +82,8 @@ public class BinaryTree<T> implements BinaryTreeInterface<T>
    } // end getRootNode
 
    /**
-    * Calls postorderTraverse(BinaryNode{@literal <}T{@literal >} node)
-    * Prints (using post-order traversal) all nodes in the "whole" tree
+    * Calls postorderTraverse(BinaryNode{@literal <}T{@literal >} node).
+    * Prints (using post-order traversal) all nodes in the "whole" tree.
     */
    public void postorderTraverse()
    {
@@ -91,7 +91,8 @@ public class BinaryTree<T> implements BinaryTreeInterface<T>
    }
    
    /**
-    * Prints (using post-order traversal) all nodes in the subtree rooted at this node
+    * Prints (using post-order traversal) all nodes in the subtree rooted at this node.
+    * @param node The node to start the traversal from.
     */
    private void postorderTraverse(BinaryNode<T> node)
    {
@@ -104,7 +105,7 @@ public class BinaryTree<T> implements BinaryTreeInterface<T>
    }
 
    /** 
-    * Prints (using post-order traversal) all nodes in the "whole" tree
+    * Prints (using post-order traversal) all nodes in the "whole" tree.
     */
    public void postorderTraverse_callBinaryNodeMethod()
    {
@@ -112,8 +113,8 @@ public class BinaryTree<T> implements BinaryTreeInterface<T>
    }
 
    /**
-    * calls getHeight(BinaryNode{@literal <}T{@literal >} node)
-    * @return  The height of the "whole" tree
+    * calls getHeight(BinaryNode{@literal <}T{@literal >} node).
+    * @return  The height of the "whole" tree.
     */
    public int getHeight()
    {
@@ -122,6 +123,7 @@ public class BinaryTree<T> implements BinaryTreeInterface<T>
    
    /**
     * Computes the height of the subtree rooted at this node.
+    * @param node The node to calculate the height from.
     * @return  The height of the subtree rooted at this node.
     */
    private int getHeight(BinaryNode<T> node)
@@ -157,6 +159,7 @@ public class BinaryTree<T> implements BinaryTreeInterface<T>
    
    /** A Recursive Method in the BinaryTree Class   
     * Counts the nodes in the subtree rooted at this node.
+    * @param node The node to start the count from.
    @return  The number of nodes in the subtree rooted at this node. */
    private int getNumberOfNodes(BinaryNode<T> node)
    {
@@ -164,7 +167,7 @@ public class BinaryTree<T> implements BinaryTreeInterface<T>
    } // end getNumberOfNodes
    
    /**
-    * Counts the nodes in the "whole" tree
+    * Counts the nodes in the "whole" tree.
     * @return  The number of nodes in the "whole" tree.
     */
    public int getNumberOfNodes_callBinaryNodeMethod()

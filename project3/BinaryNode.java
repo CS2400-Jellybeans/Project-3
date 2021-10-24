@@ -100,25 +100,6 @@ class BinaryNode<T>
    {
       return (leftChild == null) && (rightChild == null);
    } // end isLeaf
-   
-   /**
-    * Computes the height of the subtree rooted at this node.
-    * @return  The height of the subtree rooted at this node.
-    */
-   public int getHeight_binaryNodeMethod()
-   {
-      return getHeight_binaryNodeMethod(this); // Call private getHeight
-   } // end getHeight
-   
-   private int getHeight_binaryNodeMethod(BinaryNode<T> node)
-   {
-      int height = 0;
-   
-      if (node != null)
-         height = 1 + Math.max(getHeight_binaryNodeMethod(node.getLeftChild()),
-                               getHeight_binaryNodeMethod(node.getRightChild()));
-      return height;
-   } // end getHeight
 
    /**
     * Copies the subtree rooted at this node.
@@ -146,6 +127,7 @@ class BinaryNode<T>
 
    /**
     * Computes the height of the subtree rooted at "this" node.
+    * @param node The node to start the traversal from.
     * @return  The height of the subtree rooted at "this" node.
     */
    private void postorderTraverse_binaryNodeMethod(BinaryNode<T> node)
@@ -157,6 +139,30 @@ class BinaryNode<T>
          System.out.println(node.getData());
       }
    }
+   
+   /**
+    * Computes the height of the subtree rooted at this node.
+    * @return  The height of the subtree rooted at this node.
+    */
+    public int getHeight_binaryNodeMethod()
+    {
+       return getHeight_binaryNodeMethod(this); // Call private getHeight
+    } // end getHeight
+    
+    /**
+     * Computes the height of the subtree rooted at this node.
+     * @param node The node to calculate the height from.
+     * @return  The height of the subtree rooted at this node.
+     */
+    private int getHeight_binaryNodeMethod(BinaryNode<T> node)
+    {
+       int height = 0;
+    
+       if (node != null)
+          height = 1 + Math.max(getHeight_binaryNodeMethod(node.getLeftChild()),
+                                getHeight_binaryNodeMethod(node.getRightChild()));
+       return height;
+    } // end getHeight
 
    /**
     * Counts the nodes in the subtree rooted at "this" node.
