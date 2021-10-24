@@ -24,52 +24,46 @@ class BinaryNode<T>
       rightChild = newRightChild;
    } // end constructor
 
-   public void postorderTraverse_binaryNodeMethod()
-   {
-      postorderTraverse_binaryNodeMethod(this);
-   }
-   
-   private void postorderTraverse_binaryNodeMethod(BinaryNode<T> node)
-   {
-      if(node !=null)
-      {
-         postorderTraverse_binaryNodeMethod(node.getLeftChild());
-         postorderTraverse_binaryNodeMethod(node.getRightChild());
-         System.out.println(node.getData());
-      }
-   }
-   
-
-   /** Retrieves the data portion of this node.
-       @return  The object in the data portion of the node. */
+   /**
+    * Retrieves the data portion of this node.
+    * @return  The object in the data portion of the node.
+    */
    public T getData()
    {
       return data;
    } // end getData
 
-   /** Sets the data portion of this node.
-       @param newData  The data object. */
+   /**
+    * Sets the data portion of this node.
+    * @param newData  The data object.
+    */
    public void setData(T newData)
    {
       data = newData;
    } // end setData
 
-   /** Retrieves the left child of this node.
-       @return  A reference to this node's left child. */
+   /**
+    * Retrieves the left child of this node.
+    * @return  A reference to this node's left child.
+    */
    public BinaryNode<T> getLeftChild()
    {
       return leftChild;
    } // end getLeftChild
 
-   /** Sets this node’s left child to a given node.
-       @param newLeftChild  A node that will be the left child. */
+   /**
+    * Sets this node’s left child to a given node.
+    * @param newLeftChild  A node that will be the left child.
+    */
    public void setLeftChild(BinaryNode<T> newLeftChild)
    {
       leftChild = newLeftChild;
    } // end setLeftChild
 
-   /** Detects whether this node has a left child.
-       @return  True if the node has a left child. */
+   /**
+    * Detects whether this node has a left child.
+    * @return  True if the node has a left child.
+    */
    public boolean hasLeftChild()
    {
       return leftChild != null;
@@ -80,29 +74,37 @@ class BinaryNode<T>
       return rightChild;
    } // end getLeftChild
 
-   /** Sets this node’s left child to a given node.
-       @param newReftChild  A node that will be the left child. */
+   /**
+    * Sets this node’s left child to a given node.
+    * @param newReftChild  A node that will be the left child.
+    */
    public void setRightChild(BinaryNode<T> newRightChild)
    {
       rightChild = newRightChild;
    } // end setLeftChild
 
-   /** Detects whether this node has a left child.
-       @return  True if the node has a left child. */
+   /**
+    * Detects whether this node has a left child.
+    * @return  True if the node has a left child.
+    */
    public boolean hasRightChild()
    {
       return rightChild != null;
    } // end hasLeftChild
    
-   /** Detects whether this node is a leaf.
-    @return  True if the node is a leaf. */
+   /**
+    * Detects whether this node is a leaf.
+    * @return  True if the node is a leaf.
+    */
    public boolean isLeaf()
    {
       return (leftChild == null) && (rightChild == null);
    } // end isLeaf
    
-   /** Counts the nodes in the subtree rooted at this node.
-       @return  The number of nodes in the subtree rooted at this node. */
+   /**
+    * Counts the nodes in the subtree rooted at this node.
+    * @return  The number of nodes in the subtree rooted at this node.
+    */
    public int getNumberOfNodes()
    {
       int leftNumber = 0;
@@ -118,8 +120,10 @@ class BinaryNode<T>
       return 1 + leftNumber + rightNumber;
    } // end getNumberOfNodes
    
-   /** Computes the height of the subtree rooted at this node.
-       @return  The height of the subtree rooted at this node. */
+   /**
+    * Computes the height of the subtree rooted at this node.
+    * @return  The height of the subtree rooted at this node.
+    */
    public int getHeight_binaryNodeMethod()
    {
       return getHeight_binaryNodeMethod(this); // Call private getHeight
@@ -135,8 +139,10 @@ class BinaryNode<T>
       return height;
    } // end getHeight
 
-   /** Copies the subtree rooted at this node.
-       @return  The root of a copy of the subtree rooted at this node. */
+   /**
+    * Copies the subtree rooted at this node.
+    * @return  The root of a copy of the subtree rooted at this node.
+    */
    public BinaryNode<T> copy()
    {
       BinaryNode<T> newRoot = new BinaryNode<>(data);
@@ -148,4 +154,41 @@ class BinaryNode<T>
    
       return newRoot;
    } // end copy
+
+   /**
+    * prints (using post-order traversal) all nodes of the subtree rooted at "this" node
+    */
+   public void postorderTraverse_binaryNodeMethod()
+   {
+      postorderTraverse_binaryNodeMethod(this);
+   }
+
+   /**
+    * Computes the height of the subtree rooted at "this" node.
+    * @return  The height of the subtree rooted at "this" node.
+    */
+   private void postorderTraverse_binaryNodeMethod(BinaryNode<T> node)
+   {
+      if(node !=null)
+      {
+         postorderTraverse_binaryNodeMethod(node.getLeftChild());
+         postorderTraverse_binaryNodeMethod(node.getRightChild());
+         System.out.println(node.getData());
+      }
+   }
+
+   /**
+    * Counts the nodes in the subtree rooted at "this" node.
+    * @return  The number of nodes in the subtree rooted at "this" node.
+    */
+	public int getNumberOfNodes_binaryNodeMethod()
+	{
+	  int leftNumber = 0;
+	  int rightNumber = 0;
+	  if (leftChild != null)
+	     leftNumber = leftChild.getNumberOfNodes_binaryNodeMethod();
+	  if (rightChild != null)
+	     rightNumber = rightChild.getNumberOfNodes_binaryNodeMethod();
+	  return 1 + leftNumber + rightNumber;
+	} // end getNumberOfNodes
 } // end BinaryNode
