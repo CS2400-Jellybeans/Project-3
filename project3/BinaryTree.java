@@ -82,7 +82,7 @@ public class BinaryTree<T> implements BinaryTreeInterface<T>
    } // end getRootNode
 
    /**
-    * Calls postorderTraverse(BinaryNode<T> node)
+    * Calls postorderTraverse(BinaryNode{@literal <}T{@literal >} node)
     * Prints (using post-order traversal) all nodes in the "whole" tree
     */
    public void postorderTraverse()
@@ -112,7 +112,7 @@ public class BinaryTree<T> implements BinaryTreeInterface<T>
    }
 
    /**
-    * calls getHeight(BinaryNode<T> node)
+    * calls getHeight(BinaryNode{@literal <}T{@literal >} node)
     * @return  The height of the "whole" tree
     */
    public int getHeight()
@@ -144,7 +144,7 @@ public class BinaryTree<T> implements BinaryTreeInterface<T>
     *          1. public int getNumberOfNodes()
     *          2. private int getNumberOfNodes(BinaryNode<T> node)*/
    
-   /** calls getNumberOfNodes(BinaryNode<T> node) 
+   /** calls getNumberOfNodes({@literal <}T{@literal >} node) 
    @return  The number of nodes in the "whole" tree */
    public int getNumberOfNodes()
    {
