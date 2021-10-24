@@ -48,20 +48,6 @@ public class BinaryTree<T> implements BinaryTreeInterface<T>
          rightTree.clear();
    } // end initializeTree
 
-   public void postorderTraverse()
-   {
-      postorderTraverse(root);
-   }
-   private void postorderTraverse(BinaryNode<T> node)
-   {
-      if(node !=null)
-      {
-         postorderTraverse(node.getLeftChild());
-         postorderTraverse(node.getRightChild());
-         System.out.println(node.getData());
-      }
-   }
-
    public void setRootData(T rootData)
    {
       root.setData(rootData);
@@ -95,6 +81,31 @@ public class BinaryTree<T> implements BinaryTreeInterface<T>
       return root;
    } // end getRootNode
 
+   /**
+    * Calls postorderTraverse(BinaryNode<T> node)
+    * Prints (using post-order traversal) all nodes in the "whole" tree
+    */
+   public void postorderTraverse()
+   {
+      postorderTraverse(root);
+   }
+   
+   /**
+    * Prints (using post-order traversal) all nodes in the subtree rooted at this node
+    */
+   private void postorderTraverse(BinaryNode<T> node)
+   {
+      if(node !=null)
+      {
+         postorderTraverse(node.getLeftChild());
+         postorderTraverse(node.getRightChild());
+         System.out.println(node.getData());
+      }
+   }
+
+   /** 
+    * Prints (using post-order traversal) all nodes in the "whole" tree
+    */
    public void postorderTraverse_callBinaryNodeMethod()
    {
       root.postorderTraverse_binaryNodeMethod();
