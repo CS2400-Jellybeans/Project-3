@@ -154,7 +154,7 @@ public class BinaryTree<T> implements BinaryTreeInterface<T>
    @return  The number of nodes in the "whole" tree */
    public int getNumberOfNodes()
    {
-      return 0;
+      return getNumberOfNodes(root);
    } // end getNumberOfNodes
    
    /** A Recursive Method in the BinaryTree Class   
@@ -163,7 +163,16 @@ public class BinaryTree<T> implements BinaryTreeInterface<T>
    @return  The number of nodes in the subtree rooted at this node. */
    private int getNumberOfNodes(BinaryNode<T> node)
    {
-      return 0;
+      int leftNumber = 0;
+      int rightNumber = 0;
+      BinaryNode<T> leftC = node.getLeftChild();
+      BinaryNode<T> rightC = node.getRightChild();
+
+      if (leftC != null) 
+         leftNumber = getNumberOfNodes(leftC);
+      if (rightC != null) 
+         rightNumber = getNumberOfNodes(rightC);
+      return 1 + leftNumber + rightNumber;
    } // end getNumberOfNodes
    
    /**
