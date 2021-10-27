@@ -75,22 +75,20 @@ public class DriverBT
       System.out.println();
 	} // end createTree
 	
-	/**-------------------------------------------------------------------- */
-	/**Task 4: Create a tree case as shown in assignment 3*/
 	public static void createTree2(BinaryTree<String> tree)
 	{ 
 		// Leaves
 		BinaryTree<String> bTree = new BinaryTree<>("B");
 		BinaryTree<String> fTree = new BinaryTree<>("F");
 		BinaryTree<String> gTree = new BinaryTree<>("G");
-        	BinaryTree<String> hTree = new BinaryTree<>("H");
+      BinaryTree<String> hTree = new BinaryTree<>("H");
 
-        	// Subtrees:
+      // Subtrees:
 		BinaryTree<String> dTree = new BinaryTree<>("D", fTree, null);
 		BinaryTree<String> eTree = new BinaryTree<>("E", gTree, hTree);
 		BinaryTree<String> cTree = new BinaryTree<>("C", dTree, eTree);
 
-        	tree.setTree("A", bTree, cTree);
+      tree.setTree("A", bTree, cTree);
 
 		System.out.println("\nGiven Tree:\n");
 		System.out.println("      A      ");
