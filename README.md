@@ -9,4 +9,5 @@
 + Wrote getHeightMethods (Task 2)
 + Wrote JUnit tests
 ## Link To JavaDoc Start Page
++ https://raw.githack.com/CS2400-Jellybeans/Project-3/main/javadoc/index.html
 ## Link To Video
