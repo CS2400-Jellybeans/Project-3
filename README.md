@@ -1,10 +1,10 @@
 # Project-3
 ## Contributions
-##### Jana Georgievski
+##### Jana Georgievski (pesimelaki1)
 + Wrote getNumberOfNodes methods (Task 3)
 + Wrote driver method (Task 4)
 + Edited together video
-##### Joshua Lai
+##### Joshua Lai (OrbinWaffle)
 + Wrote postorderTraverse methods (Task 1)
 + Wrote getHeightMethods (Task 2)
 + Wrote JUnit tests
